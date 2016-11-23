@@ -1,7 +1,3 @@
-#
-#
-#
-
 import rospy
 from sensor_msgs.msg import Image
 from std_msgs.msg import Int16

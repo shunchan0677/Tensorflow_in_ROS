@@ -27,7 +27,12 @@ Test set accuracy is approximately 99.2%.
 `$ rosrun cv_camera cv_camera_node`  
 `$ rostopic echo /result`  
 
-#result
+#Result
 For example, you can see result1.png or result2.png.  
 1 and 9 are camera image from rviz.
 You can see ros-node published predicted numbers.
+
+#Reference
+* Deep MNIST for Experts (https://www.tensorflow.org/versions/r0.11/tutorials/mnist/pros/index.html)  
+* Variables: Creation, Initialization, Saving, and Loading (https://www.tensorflow.org/versions/r0.11/how_tos/variables/index.html)  
+* rostensorflow (https://github.com/OTL/rostensorflow)

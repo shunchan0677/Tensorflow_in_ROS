@@ -32,7 +32,7 @@ def max_pool_2x2(x):
                         strides=[1, 2, 2, 1], padding='SAME')
 
 
-def makeCNN(x):
+def makeCNN(x,keep_prob):
     # --- define CNN model
     W_conv1 = weight_variable([5, 5, 1, 32])
     b_conv1 = bias_variable([32])
@@ -50,11 +50,13 @@ def makeCNN(x):
     b_fc1 = bias_variable([1024])
     h_pool2_flat = tf.reshape(h_pool2, [-1, 7 * 7 * 64])
     h_fc1 = tf.nn.relu(tf.matmul(h_pool2_flat, W_fc1) + b_fc1)
+    
+    h_fc1_drop = tf.nn.dropout(h_fc1, keep_prob)
 
     W_fc2 = weight_variable([1024, 10])
     b_fc2 = bias_variable([10])
 
-    y_conv = tf.nn.softmax(tf.matmul(h_fc1, W_fc2) + b_fc2)
+    y_conv = tf.nn.softmax(tf.matmul(h_fc1_drop, W_fc2) + b_fc2)
  
     return y_conv
 
@@ -67,7 +69,8 @@ class RosTensorFlow():
         self._pub = rospy.Publisher('result', Int16, queue_size=1)
 
         self.x = tf.placeholder(tf.float32, [None,28,28,1], name="x")
-        self.y_conv = makeCNN(self.x)
+        self.keep_prob = tf.placeholder("float")
+        self.y_conv = makeCNN(self.x,self.keep_prob)
 
         self._saver = tf.train.Saver()
         self._session = tf.InteractiveSession()
@@ -84,7 +87,7 @@ class RosTensorFlow():
         ret,cv_image_binary = cv2.threshold(cv_image_gray,128,255,cv2.THRESH_BINARY_INV)
         cv_image_28 = cv2.resize(cv_image_binary,(28,28))
         np_image = np.reshape(cv_image_28,(1,28,28,1))
-        predict_num = self._session.run(self.y_conv, feed_dict={self.x:np_image})
+        predict_num = self._session.run(self.y_conv, feed_dict={self.x:np_image,self.keep_prob:1.0})
         answer = np.argmax(predict_num,1)
         rospy.loginfo('%d' % answer)
         self._pub.publish(answer)

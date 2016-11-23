@@ -34,3 +34,5 @@ You can see ros-node published predicted numbers.
 * Deep MNIST for Experts (https://www.tensorflow.org/versions/r0.11/tutorials/mnist/pros/index.html)  
 * Variables: Creation, Initialization, Saving, and Loading (https://www.tensorflow.org/versions/r0.11/how_tos/variables/index.html)  
 * rostensorflow (https://github.com/OTL/rostensorflow)
+
+This software is released under the Apache License2.0, see LICENSE.txt.

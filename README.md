@@ -28,8 +28,6 @@ Test set accuracy is approximately 99.2%.
 `$ rostopic echo /result`  
 
 #Result
-For example, you can see result1.png or result2.png.  
-1 and 9 are camera image from rviz.
 You can see ros-node published predicted numbers.
 
 #Reference

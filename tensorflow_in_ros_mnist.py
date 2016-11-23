@@ -1,3 +1,11 @@
+"""
+tensorflow_in_ros_mnist.py
+Copyright 2016 Shunya Seiya
+
+This software is released under the Apache License, Version 2.0
+https://opensource.org/licenses/Apache-2.0
+"""
+
 import rospy
 from sensor_msgs.msg import Image
 from std_msgs.msg import Int16

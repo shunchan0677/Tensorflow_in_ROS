@@ -80,14 +80,14 @@ class RosTensorFlow():
 
     def callback(self, image_msg):
         cv_image = self._cv_bridge.imgmsg_to_cv2(image_msg, "bgr8")
-        cv_image = cv2.cvtColor(cv_image, cv2.COLOR_RGB2GRAY)
-        ret,cv_image = cv2.threshold(cv_image,128,255,cv2.THRESH_BINARY_INV)
-        cv_image = cv2.resize(cv_image,(28,28))
-        cv_image = np.reshape(cv_image,(1,28,28,1))
-        y_conv1 = self._session.run(self.y_conv, feed_dict={self.x:cv_image})
-        y = np.argmax(y_conv1,1)
-        rospy.loginfo('%d' % y)
-        self._pub.publish(y)
+        cv_image_gray = cv2.cvtColor(cv_image, cv2.COLOR_RGB2GRAY)
+        ret,cv_image_binary = cv2.threshold(cv_image_gray,128,255,cv2.THRESH_BINARY_INV)
+        cv_image_28 = cv2.resize(cv_image_binary,(28,28))
+        np_image = np.reshape(cv_image_28,(1,28,28,1))
+        predict_num = self._session.run(self.y_conv, feed_dict={self.x:np_image})
+        answer = np.argmax(predict_num,1)
+        rospy.loginfo('%d' % answer)
+        self._pub.publish(answer)
 
     def main(self):
         rospy.spin()

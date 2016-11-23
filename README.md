@@ -27,6 +27,9 @@ Test set accuracy is approximately 99.2%.
 `$ rosrun cv_camera cv_camera_node`  
 `$ rostopic echo /result`  
 
+if you do 
+`$ python tensorflow_in_ros_mnist.py image:=/cv_camera/image_raw` after`$ rosrun cv_camera cv_camera_node`  , this code will make error. But, it is ok because that is just __init__ error.
+
 #Result
 You can see ros-node published predicted numbers.
 

@@ -31,8 +31,7 @@ If you execute this code after launching a camera-node, this code will make erro
 But, it is ok because that is just "now loading" error and predict-code will be executed shortly after __init__-code finished.
 
 #Result
-You can see ros-node published predicted numbers.  
-Look at this.  
+You can see ros-node published predicted numbers. Look at this.  
 Right picture is 9-image from camera.  
 Left number is published predicted number.  
 

@@ -33,10 +33,10 @@ But, it is ok because that is just "now loading" error and predict-code will be 
 #Result
 You can see ros-node published predicted numbers.
 Look at this.
-Right picture is 1-image from camera.
+Right picture is 9-image from camera.
 Left number is published predicted number.
 
-![Result](https://qiita-image-store.s3.amazonaws.com/0/134368/ba9463c6-1009-9226-7fe9-1d0cd265610d.png "result")
+![Result](https://qiita-image-store.s3.amazonaws.com/0/134368/01ba808c-2867-5008-773d-85fd11464ea9.png "result")
 
 #Reference
 * Deep MNIST for Experts (https://www.tensorflow.org/versions/r0.11/tutorials/mnist/pros/index.html)  

@@ -31,10 +31,10 @@ If you execute this code after launching a camera-node, this code will make erro
 But, it is ok because that is just "now loading" error and predict-code will be executed shortly after __init__-code finished.
 
 #Result
-You can see ros-node published predicted numbers.
-Look at this.
-Right picture is 9-image from camera.
-Left number is published predicted number.
+You can see ros-node published predicted numbers.  
+Look at this.  
+Right picture is 9-image from camera.  
+Left number is published predicted number.  
 
 ![Result](https://qiita-image-store.s3.amazonaws.com/0/134368/01ba808c-2867-5008-773d-85fd11464ea9.png "result")
 

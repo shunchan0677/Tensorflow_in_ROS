@@ -33,7 +33,7 @@ But, it is ok because that is just "now loading" error and predict-code will be 
 #Result
 You can see ros-node published predicted numbers.
 
-https://qiita-image-store.s3.amazonaws.com/0/134368/ba9463c6-1009-9226-7fe9-1d0cd265610d.png
+![Result](https://qiita-image-store.s3.amazonaws.com/0/134368/ba9463c6-1009-9226-7fe9-1d0cd265610d.png "result")
 
 #Reference
 * Deep MNIST for Experts (https://www.tensorflow.org/versions/r0.11/tutorials/mnist/pros/index.html)  

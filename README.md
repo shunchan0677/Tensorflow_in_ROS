@@ -37,7 +37,7 @@ Left number is published predicted number.
 
 ![Result](https://qiita-image-store.s3.amazonaws.com/0/134368/01ba808c-2867-5008-773d-85fd11464ea9.png "result")
 
-#Reference
+# Reference
 * Deep MNIST for Experts (https://www.tensorflow.org/versions/r0.11/tutorials/mnist/pros/index.html)  
 * Variables: Creation, Initialization, Saving, and Loading (https://www.tensorflow.org/versions/r0.11/how_tos/variables/index.html)  
 * rostensorflow (https://github.com/OTL/rostensorflow)

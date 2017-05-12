@@ -4,8 +4,9 @@ I used Tensorflow tutorial Deep MNIST model(https://www.tensorflow.org/versions/
 
 Before you use this, you must install some programs.
 
-* Install tensorflow (see https://www.tensorflow.org/versions/r0.9/get_started/os_setup.html)  
+* Install Tensorflow (see https://www.tensorflow.org/versions/r0.9/get_started/os_setup.html)  
 * Install ROS (see http://wiki.ros.org)  
+* Install OpenCV(see http://opencv.org/ or https://github.com/opencv/opencv)
 * Install cv-bridge, and camera driver (for example, cv_camera)  
 
 `$ sudo apt-get install ros-indigo-cv-bridge ros-indigo-cv-camera`

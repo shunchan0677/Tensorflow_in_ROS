@@ -75,10 +75,10 @@ class RosTensorFlow():
         self._saver = tf.train.Saver()
         self._session = tf.InteractiveSession()
         
-        init_op = tf.initialize_all_variables()
+        init_op = tf.global_variables_initializer()
         self._session.run(init_op)
 
-        self._saver.restore(self._session, "model.ckpt")
+        self._saver.restore(self._session, "model/model.ckpt")
 
 
     def callback(self, image_msg):

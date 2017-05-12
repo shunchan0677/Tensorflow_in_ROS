@@ -1,4 +1,4 @@
-#Tensorflow_in_ROS
+# Tensorflow_in_ROS
 I made a ros-node to predict numbers from camera image.  
 I used Tensorflow tutorial Deep MNIST model(https://www.tensorflow.org/versions/r0.11/tutorials/mnist/pros/index.html)
 
@@ -10,17 +10,17 @@ Before you use this, you must install some programs.
 
 `$ sudo apt-get install ros-indigo-cv-bridge ros-indigo-cv-camera`
 
-#tensorflow_in_ros_mnist.py
+# tensorflow_in_ros_mnist.py
 This is main file. This make the ros-node.
 
 * publish: /result (std_msgs/Int16)
 * subscribe: /image (sensor_msgs/Image)
 
-#model.ckpt,model.ckpt.meta
+# model.ckpt,model.ckpt.meta
 This is Trained model.
 Test set accuracy is approximately 99.2%.
 
-#How to try
+# How to try
 
 `$ roscore`  
 `$ python tensorflow_in_ros_mnist.py image:=/cv_camera/image_raw`  
@@ -30,7 +30,7 @@ Test set accuracy is approximately 99.2%.
 If you execute this code after launching a camera-node, this code will make error.  
 But, it is ok because that is just "now loading" error and predict-code will be executed shortly after __init__-code finished.
 
-#Result
+# Result
 You can see ros-node published predicted numbers. Look at this.  
 Right picture is 9-image from camera.  
 Left number is published predicted number.  

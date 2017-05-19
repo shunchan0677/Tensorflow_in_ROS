@@ -28,9 +28,6 @@ Test set accuracy is approximately 99.2%.
 `$ rosrun cv_camera cv_camera_node`  
 `$ rostopic echo /result`  
 
-If you execute this code after launching a camera-node, this code will make error.  
-But, it is ok because that is just "now loading" error and predict-code will be executed shortly after __init__-code finished.
-
 # Result
 You can see ros-node published predicted numbers. Look at this.  
 Right picture is 9-image from camera.  

@@ -1,7 +1,6 @@
 """
 tensorflow_in_ros_mnist.py
 Copyright 2016 Shunya Seiya
-
 This software is released under the Apache License, Version 2.0
 https://opensource.org/licenses/Apache-2.0
 """
@@ -65,8 +64,6 @@ def makeCNN(x,keep_prob):
 class RosTensorFlow():
     def __init__(self):
         self._cv_bridge = CvBridge()
-        self._sub = rospy.Subscriber('image', Image, self.callback, queue_size=1)
-        self._pub = rospy.Publisher('result', Int16, queue_size=1)
 
         self.x = tf.placeholder(tf.float32, [None,28,28,1], name="x")
         self.keep_prob = tf.placeholder("float")
@@ -79,6 +76,9 @@ class RosTensorFlow():
         self._session.run(init_op)
 
         self._saver.restore(self._session, "model/model.ckpt")
+
+        self._sub = rospy.Subscriber('image', Image, self.callback, queue_size=1)
+        self._pub = rospy.Publisher('result', Int16, queue_size=1)
 
 
     def callback(self, image_msg):
